@@ -82,7 +82,19 @@ print(np.cross(v, w))
 
 ########## 06: JALANKAN! Diberi vektor baris v=[0,3,2], w=[4,1,1], dan u=[0,—2,0], tulis vektor X-(-8,—1,4) sebagai kombinasi linear dari v, w, dan u. ##########
 print(f'')
+v = np.array([[1, 1, 0]])
+w = np.array([[1, 0, 0]])
+u = np.array([[0, 0, 1]])
 
+matrix = np.vstack([v, w, u])
+
+rank = np.linalg.matrix_rank(matrix)
+
+print(f'Rank: {rank}')
+
+is_independent = rank == matrix.shape[0] # Checks if rank equals to the number of rows
+
+print(f'Are the vectors linearly independent? {is_independent}')
 v = np.array([[0, 3, 2]])
 w = np.array([[4, 1, 1]])
 u = np.array([[0, -2, 0]])
